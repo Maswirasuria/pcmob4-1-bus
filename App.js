@@ -8,7 +8,7 @@ import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator } from 'rea
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [arrival, setArrival] = useState("");
-  const BUSSTOP_URL = "https://arrivelah2.busrouter.sg/?id=83139";
+  const BUSSTOP_URL = "https://arrivelah2.busrouter.sg/?id=11111";
 
 
 
@@ -21,7 +21,7 @@ export default function App() {
     .then((responseData)=>{
       console.log(responseData.services);
       const myBus = responseData.services.filter(
-        (service)=>service.no==='155'
+        (service)=>service.no==='174'
       )[0];
       const duration_ms = myBus.next.duration_ms;
       console.log(duration_ms);
@@ -84,5 +84,6 @@ const styles = StyleSheet.create({
   },
   arrivalTime: {
     fontSize: 25,
+    fontFamily: "monospace",
   },
 });
